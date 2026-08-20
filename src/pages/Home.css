@@ -1,7 +1,11 @@
+/* =========================
+   HERO
+========================= */
+
 .hero {
-  max-width: 900px;
+  width: min(1100px, 100%);
   margin: 0 auto;
-  padding: 8rem 2rem;
+  padding: 9rem 2rem 10rem;
   text-align: center;
 }
 
@@ -10,8 +14,8 @@
   align-items: center;
   gap: 0.5rem;
 
-  margin: 0 0 1.5rem;
-  padding: 0.5rem 0.9rem;
+  margin: 0 0 1.75rem;
+  padding: 0.55rem 1rem;
 
   border: 1px solid var(--color-primary-light);
   border-radius: 999px;
@@ -24,36 +28,46 @@
 }
 
 .hero h1 {
-  max-width: 800px;
+  max-width: 950px;
   margin: 0 auto;
+
   color: var(--color-primary-dark);
-  font-size: clamp(3rem, 7vw, 5.5rem);
-  line-height: 1;
-  letter-spacing: -0.04em;
+
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 0.98;
+  letter-spacing: -0.05em;
 }
 
 .hero-description {
-  max-width: 600px;
-  margin: 2rem auto 0;
+  max-width: 680px;
+  margin: 2.25rem auto 0;
+
   color: var(--color-text-light);
-  font-size: 1.1rem;
+
+  font-size: 1.15rem;
   line-height: 1.7;
 }
+
 .hero-actions {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2.5rem;
+
+  margin-top: 2.75rem;
 }
 
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.5rem;
+
+  padding: 0.95rem 1.6rem;
+
   border-radius: 999px;
+
   font-size: 0.95rem;
   font-weight: 600;
+
   transition:
     transform 0.2s ease,
     background-color 0.2s ease,
@@ -83,9 +97,91 @@
   color: white;
 }
 
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin: 0 auto;
+
+  padding: 9rem 3rem;
+}
+
+.section-heading {
+  max-width: 750px;
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+.section-heading p {
+  margin: 0 0 0.85rem;
+
+  color: var(--color-primary);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  color: var(--color-primary-dark);
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.services-grid {
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 2rem;
+
+  margin-top: 5rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+  .services {
+    padding: 7rem 2rem;
+  }
+
+  .services-grid {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 600px) {
   .hero {
-    padding: 5rem 1.5rem;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 13vw, 4rem);
+  }
+
+  .hero-description {
+    font-size: 1rem;
   }
 
   .hero-actions {
@@ -94,5 +190,19 @@
 
   .btn {
     width: 100%;
+  }
+
+  .services {
+    padding: 5rem 1.25rem;
+  }
+
+  .section-heading h2 {
+    font-size: 2.5rem;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 3rem;
   }
 }

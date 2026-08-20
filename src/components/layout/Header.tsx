@@ -1,4 +1,5 @@
 import "./Header.css";
+import logo from "../../assets/greenweb-logo.svg";
 import { useState } from "react";
 
 
@@ -10,9 +11,13 @@ function Header() {
     return (
         <header>
             <nav>
-                <div className="logo">
-                    <span>GreenWeb</span>
-                </div>
+                <a href="/" className="logo" aria-label="GreenWeb - Accueil">
+                    <img src={logo} alt="" />
+
+                     <span className="logo-name">
+                        Green<span>Web</span>
+                     </span>
+                </a>
                 <button className="menu-button" 
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}>
@@ -23,8 +28,12 @@ function Header() {
                     <li><a href="/agency">L'agence</a></li>
                     <li><a href="/services">Services</a></li>
                     <li><a href="/portfolio">Réalisations</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
+                    <li>
+                        <a href="/contact" className="nav-contact">
+                            Parlons de votre projet
+                        </a>
+                    </li>
+                </ul>       
             </nav>
 
 
